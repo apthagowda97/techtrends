@@ -1,0 +1,9 @@
+.github/
+argocd/
+helm/
+kubernetes/
+screenshots/
+
+.gitignore
+Vagrantfile
+docker_commands
