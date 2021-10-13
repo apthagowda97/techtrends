@@ -1,11 +1,32 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+`docker build -t techtrends .`
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+`docker container run --detach --name techtrends --publish 7111:3111 techtrends:latest `
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+`docker container logs techtrends`
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+``` 
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:werkzeug:2021/10/13, 19/20/02: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2021/10/13, 19/20/54:172.17.0.1 - - [13/Oct/2021 19:20:54] "GET / HTTP/1.1" 200 -
+INFO:app:2021/10/13, 19/20/55:Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:2021/10/13, 19/20/55:172.17.0.1 - - [13/Oct/2021 19:20:55] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:2021/10/13, 19/20/57:172.17.0.1 - - [13/Oct/2021 19:20:57] "GET / HTTP/1.1" 200 -
+INFO:app:2021/10/13, 19/20/59:The "About Us" page retrieved!
+INFO:werkzeug:2021/10/13, 19/20/59:172.17.0.1 - - [13/Oct/2021 19:20:59] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2021/10/13, 19/21/00:172.17.0.1 - - [13/Oct/2021 19:21:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2021/10/13, 19/21/02:172.17.0.1 - - [13/Oct/2021 19:21:02] "GET /create HTTP/1.1" 200 -
+INFO:app:2021/10/13, 19/21/12:Article "Hi" created!
+INFO:werkzeug:2021/10/13, 19/21/12:172.17.0.1 - - [13/Oct/2021 19:21:12] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:2021/10/13, 19/21/12:172.17.0.1 - - [13/Oct/2021 19:21:12] "GET / HTTP/1.1" 200 -
+INFO:app:2021/10/13, 19/21/15:Article "Hi" retrieved!
+INFO:werkzeug:2021/10/13, 19/21/15:172.17.0.1 - - [13/Oct/2021 19:21:15] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:2021/10/13, 19/21/18:172.17.0.1 - - [13/Oct/2021 19:21:18] "GET / HTTP/1.1" 200 -
+```

@@ -48,6 +48,7 @@ stderr_handler = logging.StreamHandler(stream=sys.stderr)
 stderr_handler.setLevel(logging.DEBUG)
 
 logging.basicConfig(
+    level=logging.DEBUG,
     format="%(levelname)s:%(name)s:%(asctime)s:%(message)s",
     handlers=[stdout_handler, stderr_handler],
     datefmt="%Y/%m/%d, %H/%M/%S",
@@ -72,7 +73,7 @@ def post(post_id):
         app.logger.info('A non-existing article is accessed and a "404" page returned!')
         return render_template("404.html"), 404
     else:
-        app.logger.info(f'Article "{post["title"]}" retrieved!')
+        app.logger.info('Article "{0}" retrieved!'.format(post["title"]))
         return render_template("post.html", post=post)
 
 
@@ -99,7 +100,7 @@ def create():
             )
             connection.commit()
             connection.close()
-            app.logger.info(f'Article "{title}" created!')
+            app.logger.info('Article "{0}" created!'.format(title))
             return redirect(url_for("index"))
 
     return render_template("create.html")

@@ -3,12 +3,13 @@ LABEL maintainer="Aptha Gowda"
 
 WORKDIR /app
 
-COPY . /app
+COPY techtrends /app
 
-RUN pip install -r techtrends/requirements.txt
+RUN python2.7 -m pip install --upgrade pip \ 
+&&python2.7 -m pip install -r requirements.txt
 
-RUN python techtrends/init_db.py
+RUN python init_db.py
 
 EXPOSE 3111
 
-CMD [ "python", "techtrends/app.py" ]
+CMD [ "python2.7", "app.py" ]
